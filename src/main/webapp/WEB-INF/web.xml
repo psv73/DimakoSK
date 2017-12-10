@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <description></description>
+        <display-name>HomeServlet</display-name>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>net.psv73.websait.controller.HomeServlet</servlet-class>
+        <init-param>
+            <param-name>defaultPage</param-name>
+            <param-value>/vacancies</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resources/*</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/view/error.jsp</location>
+    </error-page>
+
+<!--    <filter>
+        <filter-name>logFilter</filter-name>
+        <filter-class>net.psv73.websait.filters.LogFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>logFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+
+</web-app>
