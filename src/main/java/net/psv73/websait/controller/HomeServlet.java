@@ -37,7 +37,6 @@ public class HomeServlet extends HttpServlet {
 
         request.setAttribute("pageName", pageName);
         request.setAttribute("applet", applet);
-        request.setAttribute("defaultPage", defaultPage);
 
         if (request.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(request.getParameter("lang"))) {
             response = Utils.setLanguageFromParam(response, request.getParameter("lang"));
