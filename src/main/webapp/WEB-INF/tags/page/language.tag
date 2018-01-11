@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%--<a class="navbar-brand" href="#">Dimako Slovakia S.R.O</a>--%>
+            <%--<a class="navbar-brand" href="#">Dimako Slovakia S.R.O</a> --%>
         </div>
         <div class="collapse navbar-collapse" id="navbar-main">
             <ul class="nav navbar-nav">
@@ -79,14 +79,4 @@
         if (r) return r[2];
         else return "";
     }
-
-/*    $(document).ready(function () {
-        var url = window.location.href.substr(window.location.href.lastIndexOf('/'));
-        $('.navbar-nav a').each(function () {
-            var href = $(this).attr('href').substr($(this).attr('href').lastIndexOf('/'));
-            if (href === url || href === '') {
-                $(this).parent('li').addClass('active');
-            }
-        });
-    });*/
 </script>
