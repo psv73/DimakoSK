@@ -14,9 +14,9 @@ gretty {
 
 sourceCompatibility = 1.7
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '2.0'
+//}
 
 repositories {
     mavenCentral()
