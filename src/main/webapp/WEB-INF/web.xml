@@ -31,6 +31,16 @@
         <location>/WEB-INF/view/error.jsp</location>
     </error-page>
 
+<!--    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Viewpoint Secure URLs</web-resource-name>
+            <url-pattern>/mcon/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>-->
+
 <!--    <filter>
         <filter-name>logFilter</filter-name>
         <filter-class>net.psv73.websait.filters.LogFilter</filter-class>

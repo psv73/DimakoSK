@@ -1,5 +1,8 @@
 package net.psv73.websait.controller;
 
+import net.psv73.websait.Languages;
+import net.psv73.websait.dao.ArticleDAO;
+import net.psv73.websait.model.Article;
 import net.psv73.websait.util.Utils;
 
 import javax.servlet.ServletConfig;
@@ -9,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * https://www.youtube.com/watch?v=t4FCGetKvgE&t=14
@@ -36,9 +41,10 @@ public class HomeServlet extends HttpServlet {
         String pageName = (webPath.equals("/") || webPath.isEmpty()) ? defaultPage : webPath;
         String applet = "/WEB-INF/view" + pageName + ".jsp";
 
-        request.setAttribute("pageName", pageName);
-        request.setAttribute("applet", applet);
-        request.setAttribute("applet", applet);
+        if (pageName.equals("/about")) {
+            List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage()));
+            request.setAttribute("atricles", articles);
+        }
 
         if (request.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(request.getParameter("lang"))) {
             response = Utils.setLanguageFromParam(response, request.getParameter("lang"));

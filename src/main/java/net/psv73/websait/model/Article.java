@@ -1,7 +1,10 @@
 package net.psv73.websait.model;
 
+import net.psv73.websait.Languages;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -10,21 +13,40 @@ public class Article implements Serializable {
     @Access(AccessType.FIELD)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "created", nullable = false)
+    private Date created;
 
     private String text;
 
     @Column(length = 3)
-    private String language;
+    private Languages language;
 
     private String name;
 
-    public Article() {}
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date", nullable = false)
+    private Date date;
 
-    public Article(String text, String language, String name) {
-        this.language = language;
+
+    public Article() {
+    }
+
+    public Article(String text, Languages language, String name, Date date) {
         this.text = text;
+        this.language = language;
         this.name = name;
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public long getId() {
@@ -43,11 +65,11 @@ public class Article implements Serializable {
         this.text = text;
     }
 
-    public String getLanguage() {
+    public Languages getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(Languages language) {
         this.language = language;
     }
 
@@ -57,6 +79,18 @@ public class Article implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     @Override

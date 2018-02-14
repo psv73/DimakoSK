@@ -11,23 +11,28 @@
     </div>
     <div class="lang_block">
         <a href="?lang=sk" title="Slovenčina" onclick="SetCookie('lang','sk');return false;">
-            <img src="<%= request.getContextPath() %>/resources/img/flag/Slovakia.png" alt="" width="32px" class="brightness">
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Slovakia.png" alt="" width="32px"
+                 class="brightness">
         </a>
         <a href="?lang=en" title="English" onclick="SetCookie('lang','en');return false;">
-            <img src="<%= request.getContextPath() %>/resources/img/flag/United-Kingdom.png" alt="" width="32px" class="brightness">
+            <img src="<%= request.getContextPath() %>/resources/img/flag/United-Kingdom.png" alt="" width="32px"
+                 class="brightness">
         </a>
         <a href="?lang=ru" title="Русский" onclick="SetCookie('lang','ru');return false;">
-            <img src="<%= request.getContextPath() %>/resources/img/flag/Russia.png" alt="" width="32px" class="brightness">
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Russia.png" alt="" width="32px"
+                 class="brightness">
         </a>
         <a href="?lang=de" title="Deutsch" onclick="SetCookie('lang','de');return false;">
-            <img src="<%= request.getContextPath() %>/resources/img/flag/Germany.png" alt="" width="32px" class="brightness">
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Germany.png" alt="" width="32px"
+                 class="brightness">
         </a>
     </div>
 </div>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed right" data-toggle="collapse" data-target="#navbar-main"
+            <button type="button" class="navbar-toggle collapsed right" data-toggle="collapse"
+                    data-target="#navbar-main"
                     aria-expanded="false">
                 <span class=sr-only>Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -38,24 +43,50 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li<%= request.getAttribute("pageName").equals("/about")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%></a>
+                <li${pageName.equals("/about")?" class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%>
+                    </a>
                 </li>
-                <li<%=request.getAttribute("pageName").equals("/carpark")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%></a>
+                <li${pageName.equals("/carpark")?" class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%>
+                    </a>
                 </li>
-                <li<%=request.getAttribute("pageName").equals("/vacancies")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%></a>
+                <li${pageName.equals("/vacancies")?" class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%>
+                    </a>
                 </li>
-                <li<%=request.getAttribute("pageName").equals("/gallery")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%></a>
+                <li${pageName.equals("/gallery")?" class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%>
+                    </a>
                 </li>
-                <li<%=request.getAttribute("pageName").equals("/documents")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%></a>
+                <li${pageName.equals("/documents")?" class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%>
+                    </a>
                 </li>
-                <li<%=request.getAttribute("pageName").equals("/contacts")?" class='active'":""%>>
-                    <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%></a>
+                <li${pageName.equals("/contacts") ? " class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%>
+                    </a>
                 </li>
+                <%--
+                                <li<%= request.getAttribute("pageName").equals("/about")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%></a>
+                                </li>
+                                <li<%=request.getAttribute("pageName").equals("/carpark")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%></a>
+                                </li>
+                                <li<%=request.getAttribute("pageName").equals("/vacancies")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%></a>
+                                </li>
+                                <li<%=request.getAttribute("pageName").equals("/gallery")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%></a>
+                                </li>
+                                <li<%=request.getAttribute("pageName").equals("/documents")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%></a>
+                                </li>
+                                <li<%=request.getAttribute("pageName").equals("/contacts")?" class='active'":""%>>
+                                    <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%></a>
+                                </li>
+                --%>
             </ul>
         </div>
     </div>
