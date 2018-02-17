@@ -19,6 +19,7 @@ public class Article implements Serializable {
     @Column(name = "created", nullable = false)
     private Date created;
 
+    @Column(length = 1024)
     private String text;
 
     @Column(length = 3)

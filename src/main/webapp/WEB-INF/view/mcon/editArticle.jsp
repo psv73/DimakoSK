@@ -32,7 +32,7 @@
         <div class="col-xs-12">
             <form method="post" action="${pageContext.request.contextPath}/mcon/editArticle">
                 <table border="0" cellspacing="5" cellpadding="1">
-                    <tr>
+                    <tr style="padding-top: 20px;">
                         <td>Date</td>
                         <td><input type="date" name="date"
                                    value="<fmt:formatDate pattern = "<%= Utils.DATEFORMAT%>" value = "${article.date}"/>">
@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>News</td>
-                        <td><textarea type="text" name="text" row="5" cols="100">${article.text}</textarea></td>
+                        <td><textarea type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
                     </tr>
                     <tr>
                         <td>Language</td>

@@ -44,7 +44,7 @@
                     </tr>
                     <tr>
                         <td>News</td>
-                        <td><textarea type="text" name="text" row="10" cols="100">${article.text}</textarea></td>
+                        <td><textarea type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
                     </tr>
                     <tr>
                         <td>Language</td>

@@ -18,9 +18,9 @@ import java.util.Date;
 import java.util.List;
 
 @WebServlet(urlPatterns = {"/mcon","/mcon/articlesList","/mcon/"})
-public class articlesListServlet extends HttpServlet {
+public class ListArticleServlet extends HttpServlet {
 
-    public articlesListServlet() {
+    public ListArticleServlet() {
     }
 
     @Override

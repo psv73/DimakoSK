@@ -41,15 +41,17 @@ public class HomeServlet extends HttpServlet {
         String pageName = (webPath.equals("/") || webPath.isEmpty()) ? defaultPage : webPath;
         String applet = "/WEB-INF/view" + pageName + ".jsp";
 
-        if (pageName.equals("/about")) {
-            List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage()));
-            request.setAttribute("atricles", articles);
-        }
+        request.setAttribute("pageName", pageName);
 
         if (request.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(request.getParameter("lang"))) {
             response = Utils.setLanguageFromParam(response, request.getParameter("lang"));
         } else {
             Utils.setLanguageFromCookie(request.getCookies());
+        }
+
+        if (pageName.equals("/about")) {
+            List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage().toUpperCase()));
+            request.setAttribute("articles", articles);
         }
 
 /*        if (!webPath.equals(pageName)) {

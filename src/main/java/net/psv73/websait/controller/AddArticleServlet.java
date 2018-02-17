@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @WebServlet(urlPatterns = {"/mcon/addArticle"})
-public class addArticleServlet extends HttpServlet {
+public class AddArticleServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

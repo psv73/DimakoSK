@@ -18,6 +18,7 @@ public class User {
 
     private String code;
 
+    @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "User_Role",
             joinColumns = { @JoinColumn(name = "user_id") },

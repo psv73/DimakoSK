@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@WebFilter(urlPatterns = {"/mcon/*"})
+@WebFilter(urlPatterns = {"/mcon/*"})
 public class SecurityFilter implements Filter {
 
     @Override
@@ -22,11 +22,11 @@ public class SecurityFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
 
         String servletPath = req.getServletPath();
-        String pathInfo = req.getPathInfo();
 
-        if (!(servletPath + "/" + pathInfo).equals("/mcon/login")) {
-            if (req.getSession().getAttribute("logginedUser") == null) {
-                req.getRequestDispatcher("/WEB-INF/view/mcon/login.jsp").forward(request, response);
+        if (!(servletPath).equals("/mcon/login")) {
+            if (req.getSession().getAttribute("loginedUser") == null) {
+//                req.getRequestDispatcher("/WEB-INF/view/mcon/login.jsp").forward(request, response);
+                resp.sendRedirect(req.getContextPath() + "/mcon/login");
                 return;
             }
         }

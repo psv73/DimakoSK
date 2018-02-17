@@ -12,6 +12,9 @@ gretty {
 //    debugSuspend = true
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
 sourceCompatibility = 1.7
 
 repositories {
@@ -41,7 +44,8 @@ dependencies {
 
     //jdbc dependencies
 //    compile 'org.xerial:sqlite-jdbc:3.20.1'
-    compile 'mysql:mysql-connector-java:5.1.38'
+    compile 'mysql:mysql-connector-java:5.1.45'
+//    compile 'mysql:mysql-connector-java:5.1.38'
 
 //    compile 'javax.json:javax.json-api:1.1'
 //    compile 'com.pushtorefresh.storio2:sqlite:2.0.0'
