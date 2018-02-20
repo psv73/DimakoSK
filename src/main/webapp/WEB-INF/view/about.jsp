@@ -18,29 +18,15 @@
         </h1>
     </div>
     <div class="row">
-        <div class="col-xs-12" align="justify">
+        <div class="col-xs-8" align="justify">
             <img src="<%= request.getContextPath() %>/resources/img/Office.jpg" alt="office"
                  class="office img-responsive pull-right img-thumbnail">
             <%= Utils.getRecourceBundleValue("key.about")%>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12" align="left">
-            <h3>News</h3>
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12" align="left">
-            <table border="0" width="100%">
-                <c:forEach items="${articles}" var="article">
-                    <tr>
-                        <td width="10%"><p><frt:formatDate pattern="<%= Utils.getDatePattern()%>" value="${article.date}"/></p></td>
-                        <td width="2%"><p>—</p></td>
-                        <td><p>${article.text}</p></td>
-                    </tr>
-                </c:forEach>
-            </table>
+        <div class="col-xs-4" align="left">
+            <div class="row">
+                <page:news/>
+            </div>
         </div>
     </div>
 </div>

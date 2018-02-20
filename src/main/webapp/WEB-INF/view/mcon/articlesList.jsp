@@ -24,100 +24,71 @@
     <div class="heading">
         <h1>News list</h1>
     </div>
-    <p/>
+    <jsp:include page="_menu.jsp"/>
+    <div class="col-xs-12 text-center">
+        <h3 style="color: red;">${error}</h3>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             <form method="post" action="${pageContext.request.contextPath}/mcon/articlesList">
-                <%--<frt:formatDate value="${dateStart}" pattern="yyyy-MM-dd" var="date1"/>--%>
                 <span>From</span>
-                <input type="date" name="dateStart" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
-         value = "${dateStart}" />">
+                <input type="date" style="height: 2em" name="dateStart" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
+                         value = "${dateStart}" />">
                 <span>to</span>
-                <input type="date" name="dateEnd" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
-         value = "${dateEnd}" />">
-<%--                    <div class='col-md-5'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker6'>
-                                <input type='text' class="form-control"
-                                       name="dateStart" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
-         value = "${dateStart}" />"/>
-                                <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                             </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-5'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker7'>
-                                <input type='text' class="form-control" name="dateEnd" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
-         value = "${dateEnd}" />"/>
-                                <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                            </div>
-                        </div>
-                    </div>--%>
+                <input type="date" style="height: 2em" name="dateEnd" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
+                         value = "${dateEnd}" />">
                 <span>Language</span>
-                <select name="lang">
-                    <c:forEach items="<%=Languages.values()%>" var="item">
-                        <option value="${item}" ${item == lang ? 'selected' : ''}>${item}</option>
-                    </c:forEach>
-                </select>
-                <input type="submit" value="Show">
+                    <select name="lang">
+                        <c:forEach items="<%=Languages.values()%>" var="item">
+                            <option value="${item}" ${item == lang ? 'selected' : ''}>${item}</option>
+                        </c:forEach>
+                    </select>
+                    <input type="submit" value="Show">
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <br>
-            <table border="1" cellpadding="5" cellspacing="1" width="100%">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Date</th>
-                    <th class="text-center">Article</th>
-                    <th class="text-center">Language</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
+                    <th>Date</th>
+                    <th>Article</th>
+                    <th>Language</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
+                </thead>
+                <tbody>
                 <c:forEach items="${articles}" var="article">
                     <tr>
-                        <td align="center">${article.id}</td>
-                        <td><frt:formatDate pattern = "<%= Utils.getDatePattern()%>" value = "${article.date}"/></td>
-                        <td>${article.text}</td>
+                        <td><frt:formatDate pattern="<%= Utils.getDatePattern()%>"
+                                            value="${article.date}"/></td>
+                        <td style="text-align:justify; text-justify: inter-word;">${article.text}</td>
                         <td align="center">${article.language}</td>
-                            <%--<td><a href="${pageContext.request.contextPath}/mcon/editArticle?code=${article.id}">Edit</a></td>--%>
                         <td align="center">
                             <a href="${pageContext.request.contextPath}/mcon/editArticle?id=${article.id}">Edit</a>
                         </td>
-                        <td align="center"><a href="${pageContext.request.contextPath}/mcon/deleteArticle?id=${article.id}">Delete</a>
+                        <td align="center"><a
+                                href="${pageContext.request.contextPath}/mcon/deleteArticle?id=${article.id}"
+                                onclick="delA(${article.id});return false;">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
-            <a href="${pageContext.request.contextPath}/mcon/addArticle">Add article</a>&nbsp;&nbsp;
-            <a href="${pageContext.request.contextPath}/mcon/logout">Logout</a>
+            <br>
         </div>
     </div>
-
 </div>
+
 <page:footer/>
 <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker6').datetimepicker({
-            locale: '${Utils.getCurrentLanguage()}',
-        });
-        $('#datetimepicker7').datetimepicker({
-            useCurrent: false, //Important! See issue #1075
-            locale: '${Utils.getCurrentLanguage()}'
-        });
-        $("#datetimepicker6").on("dp.change", function (e) {
-            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker7").on("dp.change", function (e) {
-            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-        });
-    });
+    function delA(id) {
+        if (confirm("Are you really wont delete article?")) {
+            location.href = "${pageContext.request.contextPath}/mcon/deleteArticle?id=" + id;
+        }
+    }
 </script>
 </body>
 </html>

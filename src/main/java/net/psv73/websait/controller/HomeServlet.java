@@ -49,7 +49,7 @@ public class HomeServlet extends HttpServlet {
             Utils.setLanguageFromCookie(request.getCookies());
         }
 
-        if (pageName.equals("/about")) {
+        if (!pageName.equals("/contacts")) {
             List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage().toUpperCase()));
             request.setAttribute("articles", articles);
         }

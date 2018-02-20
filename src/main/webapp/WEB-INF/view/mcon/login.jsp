@@ -29,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <form method="post" action="${pageContext.request.contextPath}/mcon/login">
+            <form style="margin: 0 auto; width: 250px;" method="post" action="${pageContext.request.contextPath}/mcon/login">
                 <input type="hidden" name="redirectID" value="${param.get(redirectID)}">
                 <table border="0">
                     <tr>

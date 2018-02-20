@@ -15,9 +15,14 @@
         <h1><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%></h1>
     </div>
     <div class="row">
-        <div class="col-xs-12" align="justify">
+        <div class="col-xs-8" align="justify">
             <img src="<%= request.getContextPath() %>/resources/img/happydriver.jpg" alt="truck" class="office img-responsive pull-right img-thumbnail">
             <%= Utils.getRecourceBundleValue("key.vacancies")%>
+        </div>
+        <div class="col-xs-4" align="left">
+            <div class="row">
+                <page:news/>
+            </div>
         </div>
     </div>
 </div>

@@ -32,19 +32,14 @@
         <div class="col-xs-12">
             <form method="post" action="${pageContext.request.contextPath}/mcon/addArticle">
                 <table border="0" cellspacing="5" cellpadding="1">
-                    <%--                    <tr>
-                                            <td>ID</td>
-                                            <td><input type="text" readonly name="id" value="${article.id}"></td>
-                                        </tr>--%>
                     <tr>
-                        ${date}
                         <td>Date</td>
-                        <td><input type="date" name="date" value="<frt:formatDate pattern = "<%=Utils.DATEFORMAT%>"
+                        <td><input type="date" style="height: 2em" name="date" value="<frt:formatDate pattern = "<%=Utils.DATEFORMAT%>"
          value = "${date}"/>"></td>
                     </tr>
                     <tr>
                         <td>News</td>
-                        <td><textarea type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
+                        <td><textarea style="text-align: justify; text-justify: inter-word;" type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
                     </tr>
                     <tr>
                         <td>Language</td>
@@ -64,7 +59,6 @@
                     </tr>
                 </table>
             </form>
-            <a href="${pageContext.request.contextPath}/">Home</a>
         </div>
     </div>
 </div>

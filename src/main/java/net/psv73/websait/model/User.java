@@ -1,11 +1,15 @@
 package net.psv73.websait.model;
 
+import net.psv73.websait.util.Utils;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "User")
+@Table(name = "User",
+        indexes = {@Index(name = "name", columnList = "name"),
+                    @Index(name = "password", columnList = "password")})
 public class User {
 
     @Id
@@ -16,6 +20,7 @@ public class User {
 
     private String password;
 
+    @Column(length = 20, unique = true, nullable = false)
     private String code;
 
     @ManyToMany(cascade = { CascadeType.ALL })
@@ -27,6 +32,7 @@ public class User {
     Set<Role> roles = new HashSet<>();
 
     public User() {
+        this.setCode(Utils.getIDcode());
     }
 
     public int getId() {

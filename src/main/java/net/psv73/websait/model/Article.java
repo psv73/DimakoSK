@@ -4,6 +4,7 @@ import net.psv73.websait.Languages;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -15,8 +16,9 @@ public class Article implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "created", nullable = false)
+
+    @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
     @Column(length = 1024)
@@ -33,6 +35,7 @@ public class Article implements Serializable {
 
 
     public Article() {
+        this.created = Calendar.getInstance().getTime();
     }
 
     public Article(String text, Languages language, String name, Date date) {
@@ -40,6 +43,7 @@ public class Article implements Serializable {
         this.language = language;
         this.name = name;
         this.date = date;
+        this.created = Calendar.getInstance().getTime();
     }
 
     public Date getDate() {

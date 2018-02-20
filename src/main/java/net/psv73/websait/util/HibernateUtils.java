@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtils {
 
-    public static final SessionFactory sessionFactory;
+    public static final SessionFactory sessionFactory ;
 
     static {
         try {
@@ -19,6 +19,7 @@ public class HibernateUtils {
                     .addAnnotatedClass(Role.class)
                     .buildSessionFactory();
         } catch (Throwable e) {
+            e.printStackTrace();
             throw new ExceptionInInitializerError(e);
         }
     }
@@ -26,5 +27,4 @@ public class HibernateUtils {
     public static Session getSession() {
         return sessionFactory.openSession();
     }
-
 }

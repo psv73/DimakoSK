@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -74,16 +75,20 @@ public class ListArticleServlet extends HttpServlet {
 
         SimpleDateFormat sdf = new SimpleDateFormat(Utils.DATEFORMAT);
 
-        try {
-            dateEnd = sdf.parse(dateEndStr);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!dateEndStr.isEmpty()) {
+            try {
+                dateEnd = sdf.parse(dateEndStr);
+            } catch (ParseException e) {
+                e.getLocalizedMessage();
+            }
         }
 
-        try {
-            dateStart = sdf.parse(dateStartStr);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!dateEndStr.isEmpty()) {
+            try {
+                dateStart = sdf.parse(dateStartStr);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         try {

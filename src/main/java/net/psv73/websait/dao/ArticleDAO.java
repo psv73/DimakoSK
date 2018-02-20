@@ -135,12 +135,18 @@ public class ArticleDAO {
     public static String deleteArticle(String article) {
         String error = null;
 
+        Article art = ArticleDAO.getArticleByID(article);
+        if (art == null) {
+            error = "Article not found";
+            return error;
+        }
+
         Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
-            session.delete(ArticleDAO.getArticleByID(article));
+            session.delete(art);
             tx.commit();
         } catch (HibernateException he) {
             if (tx != null) tx.rollback();

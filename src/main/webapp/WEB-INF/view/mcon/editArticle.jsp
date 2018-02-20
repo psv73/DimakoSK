@@ -34,13 +34,13 @@
                 <table border="0" cellspacing="5" cellpadding="1">
                     <tr style="padding-top: 20px;">
                         <td>Date</td>
-                        <td><input type="date" name="date"
+                        <td><input type="date" style="height: 2em" name="date"
                                    value="<fmt:formatDate pattern = "<%= Utils.DATEFORMAT%>" value = "${article.date}"/>">
                         </td>
                     </tr>
                     <tr>
                         <td>News</td>
-                        <td><textarea type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
+                        <td><textarea style="text-align: justify; text-justify: inter-word;" type="text" name="text" rows="5" cols="100">${article.text}</textarea></td>
                     </tr>
                     <tr>
                         <td>Language</td>
@@ -60,7 +60,6 @@
                     </tr>
                 </table>
             </form>
-            <a href="${pageContext.request.contextPath}/">Home</a>
         </div>
     </div>
 </div>

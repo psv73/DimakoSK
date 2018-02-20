@@ -85,17 +85,17 @@ public class Utils {
         return value;
     }
 
-    public String getIDcode() {
+    public static String getIDcode() {
         Random rd = new Random();
         int codeLength = 16;
         String codingString = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-        String code = "";
+        StringBuilder code = new StringBuilder();
 
         for (int i = 0; i < codeLength; i++) {
-            code = codingString.substring(rd.nextInt());
+            code.append(codingString.charAt(rd.nextInt(codingString.length())));
         }
 
-        return code;
+        return code.toString();
     }
 
     public static Date getDefaultDateStart() {

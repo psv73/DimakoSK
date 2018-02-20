@@ -2,6 +2,7 @@ package net.psv73.websait.controller;
 
 import net.psv73.websait.dao.ArticleDAO;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/mcon/deleteArticle"})
-public class DeleteArticle extends HttpServlet{
+public class DeleteArticle extends HttpServlet {
 
     public DeleteArticle() {
         super();
@@ -24,7 +25,14 @@ public class DeleteArticle extends HttpServlet{
 
         error = ArticleDAO.deleteArticle(id);
 
-        resp.sendRedirect(req.getContextPath() + "/mcon");
+        if (error != null) {
+            req.setAttribute("error", error);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/mcon/articlesList.jsp");
+
+            dispatcher.forward(req, resp);
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/mcon");
+        }
     }
 
     @Override

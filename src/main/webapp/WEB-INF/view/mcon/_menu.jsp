@@ -5,10 +5,11 @@
   Time: 15:41
   To change this template use File | Settings | File Templates.
 --%>
-<a href="${pageContext.request.contextPath}/mcon/articleList">News</a>
-||
-<a href="${pageContext.request.contextPath}/mcon/login">Login</a>
-||
-<a href="${pageContext.request.contextPath}/mcon/logout">Logout</a>
-
-<span style="color: red;">[${logginedUser.name}]</span>
+<div class="row">
+    <div class="col-xs-12">
+        <p/>
+        <a href="${pageContext.request.contextPath}/mcon/addArticle"><button>AddArticle</button></a>
+        <a href="${pageContext.request.contextPath}/mcon/logout"><button>Logout</button></a>
+        <span style="color: red; float: right; text-align: right;">User: [${loginedUser.name}]</span>
+    </div>
+</div>
