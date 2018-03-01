@@ -16,7 +16,7 @@
         </h1>
     </div>
     <div class="row">
-        <div class="col-xs-8" style="padding-top: 17px">
+        <div class="col-xs-8" style="padding-top: 17px" id="main">
             <div class="row">
                 <div class="col col-xs-6 col-md-4">
                     <a data-fancybox="carpark" title="Truck"
@@ -98,9 +98,7 @@
             </div>
         </div>
         <div class="col-xs-4" align="left">
-            <div class="row">
                 <page:news/>
-            </div>
         </div>
     </div>
 </div>

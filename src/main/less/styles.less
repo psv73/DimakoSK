@@ -125,6 +125,7 @@ body {
     background: #7e7e7e;
     color: #dbdbdb;
     font-size: 11px;
+    margin-top: -30px;
 
     .container {
       min-height: 80px;
@@ -173,17 +174,6 @@ body {
   max-width: 55%;
 }
 
-@media (orientation: landscape) and (min-width: 800px) {
-  .license {
-    width: 90%;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 800px) {
-  .license {
-    width: 50%;
-  }
-}
 
 @media (max-width: 800px) {
   .office {
@@ -195,7 +185,57 @@ body {
   }
 
   p {
+    font-size: 0.7em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3{
+    font-size: 1em;
+  }
+
+  .wrapper .row ul li {
     font-size: 0.9em;
+    padding-left: 15px;
+  }
+
+  .wrapper .row ul {
+    margin: 5px;
+    padding: 0;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 800px) {
+  .license {
+    width: 90%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 800px) {
+  .license {
+    width: 50%;
+  }
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.7em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .wrapper .row ul li {
+    font-size: 1.1em;
+    padding-left: 15px;
+  }
+
+  .wrapper .row ul {
+    margin: 10px;
   }
 }
 
@@ -262,5 +302,7 @@ body {
 
 .newsLine {
   border-left: 1px solid lightgray;
-  padding: 0 10px;
+  margin: 0 0 0 -20px;
+  padding-left: 10px;
+  overflow: auto;
 }

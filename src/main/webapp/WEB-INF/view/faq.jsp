@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Sergey
+  Date: 21.02.2018
+  Time: 12:15
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="net.psv73.websait.util.Utils" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -14,20 +21,19 @@
         <page:language/>
     </header>
     <div class="heading">
-        <h1><%= Utils.getRecourceBundleValue("key.header.menu.about")%>
+        <h1>F.A.Q.
         </h1>
     </div>
     <div class="row">
-        <div class="col-xs-8" align="justify" id="main">
-            <img src="<%= request.getContextPath() %>/resources/img/Office.jpg" alt="office"
-                 class="office img-responsive pull-right img-thumbnail">
-            <%= Utils.getRecourceBundleValue("key.about")%>
+        <div class="col-xs-8" align="justify">
+            <%= Utils.getRecourceBundleValue("key.faq")%>
         </div>
         <div class="col-xs-4" align="left">
-            <page:news/>
+                <page:news/>
         </div>
     </div>
 </div>
 <page:footer/>
 </body>
 </html>
+

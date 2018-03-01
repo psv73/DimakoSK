@@ -1,4 +1,13 @@
 <%@ tag pageEncoding="UTF-8" %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110486717-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110486717-1');
+</script>
 <title>Dimako SK</title>
 <meta name="description" content="website description"/>
 <meta name="keywords" content="website keywords, website keywords"/>

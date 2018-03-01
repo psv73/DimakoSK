@@ -5,6 +5,8 @@ import net.psv73.websait.util.HibernateUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 public class UserDAO {
@@ -47,17 +49,52 @@ public class UserDAO {
 
         boolean rez = true;
 
-/*        try (Session session = HibernateUtils.getSession()) {
-            session.beginTransaction();
+        Session session = HibernateUtils.getSession();
+        Transaction tx = session.beginTransaction();
 
+        try {
             session.save(user);
-
-            session.getTransaction().commit();
-        } catch (Throwable e) {
-            rez = false;
-            e.printStackTrace();
-        }*/
+            tx.commit();
+        } catch (Throwable ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
 
         return rez;
+    }
+
+    public static void CheckUsers() {
+        Session session = HibernateUtils.getSession();
+        Transaction tx = session.beginTransaction();
+        Long rows = null;
+
+        try {
+            Criteria criteria = session.createCriteria(User.class);
+            criteria.setProjection(Projections.rowCount());
+
+            rows = (Long) criteria.uniqueResult();
+
+            tx.commit();
+        } catch (Throwable ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        /**
+         * if User table is clear add new user
+         */
+        if (rows == null || rows == 0) {
+            ImitateData();
+        }
+    }
+
+    private static void ImitateData() {
+        User user = new User();
+        user.setName("dima");
+        user.setPassword("dima3861313");
+
+        addUser(user);
     }
 }

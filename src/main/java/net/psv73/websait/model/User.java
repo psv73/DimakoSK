@@ -5,6 +5,7 @@ import net.psv73.websait.util.Utils;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name = "User",
@@ -20,8 +21,7 @@ public class User {
 
     private String password;
 
-    @Column(length = 20, unique = true, nullable = false)
-    private String code;
+    private UUID uuid;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -32,7 +32,7 @@ public class User {
     Set<Role> roles = new HashSet<>();
 
     public User() {
-        this.setCode(Utils.getIDcode());
+        this.setUUID(UUID.randomUUID());
     }
 
     public int getId() {
@@ -59,12 +59,12 @@ public class User {
         this.password = password;
     }
 
-    public String getCode() {
-        return code;
+    public UUID getUUID() {
+        return uuid;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setUUID(UUID uuid) {
+        this.uuid = uuid;
     }
 
     public Set<Role> getRoles() {

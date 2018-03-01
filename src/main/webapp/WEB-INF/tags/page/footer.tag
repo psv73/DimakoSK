@@ -1,6 +1,5 @@
 <%@ tag import="net.psv73.websait.util.Utils" %>
 <%@ tag pageEncoding="UTF-8" %>
-
 <footer>
     <div class="container">
         <div class="row">
@@ -49,16 +48,46 @@
         </div>
     </div>
 </footer>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110486717-1"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var h = $("#main").outerHeight();
+        if (h > 20) {
+            $(".newsLine").css({"height": h });
+        }
+    })
+</script>
+
+<!-- Код тега ремаркетинга Google -->
+<!--------------------------------------------------
+С помощью тега ремаркетинга запрещается собирать информацию, по которой можно идентифицировать личность пользователя. Также запрещается размещать тег на страницах с контентом деликатного характера. Подробнее об этих требованиях и о настройке тега читайте на странице http://google.com/ads/remarketingsetup.
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 825045659;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/825045659/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Global site tag (gtag.js) - Google AdWords: 825045659 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-825045659"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+  gtag('config', 'AW-825045659');
+</script>
 
-    gtag('js', new Date());
-
-    gtag('config', 'UA-110486717-1');
+<!-- Event snippet for Водители conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-825045659/6PlgCPWyqnoQm-W0iQM'});
 </script>

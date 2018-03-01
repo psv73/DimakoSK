@@ -18,7 +18,7 @@
         </h1>
     </div>
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-8" id="main">
             <div class="row">
                 <div class="col-xs-12" align="justify">
                     <%= Utils.getRecourceBundleValue("key.carpark")%>
@@ -68,16 +68,11 @@
             </div>
         </div>
         <div class="col-xs-4" align="left">
-            <div class="row">
                 <page:news/>
-            </div>
         </div>
     </div>
 </div>
 <page:footer/>
+
 </body>
 </html>
-<script>
-    $(document).ready(function () {
-    })
-</script>

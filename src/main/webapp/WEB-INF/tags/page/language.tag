@@ -67,6 +67,10 @@
                     <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%>
                     </a>
                 </li>
+                <li${pageName.equals("/faq") ? " class='active'" : ""}>
+                    <a href="<%= request.getContextPath() %>/faq">F.A.Q.
+                    </a>
+                </li>
                 <%--
                                 <li<%= request.getAttribute("pageName").equals("/about")?" class='active'":""%>>
                                     <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%></a>
