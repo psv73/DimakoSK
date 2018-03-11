@@ -33,9 +33,12 @@ public class Article implements Serializable {
     @Column(name = "date", nullable = false)
     private Date date;
 
+    {
+        this.created = Calendar.getInstance().getTime();
+    }
 
     public Article() {
-        this.created = Calendar.getInstance().getTime();
+
     }
 
     public Article(String text, Languages language, String name, Date date) {
@@ -43,7 +46,6 @@ public class Article implements Serializable {
         this.language = language;
         this.name = name;
         this.date = date;
-        this.created = Calendar.getInstance().getTime();
     }
 
     public Date getDate() {

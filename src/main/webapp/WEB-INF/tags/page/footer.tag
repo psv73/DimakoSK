@@ -53,7 +53,8 @@
     $(document).ready(function () {
         var h = $("#main").outerHeight();
         if (h > 20) {
-            $(".newsLine").css({"height": h });
+            $(".newsLine").height(h - 25);
+            $("#news").innerHeight(h - 60);
         }
     })
 </script>
