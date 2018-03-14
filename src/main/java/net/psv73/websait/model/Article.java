@@ -1,6 +1,7 @@
 package net.psv73.websait.model;
 
 import net.psv73.websait.Languages;
+import net.psv73.websait.util.Utils;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
+@Table(name = "Article")
 @Access(AccessType.PROPERTY)
 public class Article implements Serializable {
 
@@ -69,7 +71,8 @@ public class Article implements Serializable {
     }
 
     public void setText(String text) {
-        this.text = text;
+
+        this.text = Utils.valdateData(text);
     }
 
     public Languages getLanguage() {

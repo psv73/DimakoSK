@@ -160,10 +160,17 @@ public class Utils {
         String pattern       = ((SimpleDateFormat)formatter).toPattern();
         String localPattern  = ((SimpleDateFormat)formatter).toLocalizedPattern();
 
-//        System.out.println("Lacale.getDefault(): " + Locale.getDefault());
-//        System.out.println("pattern: " + pattern);
-//        System.out.println("localPattern: " + localPattern);
-
         return pattern;
+    }
+
+    public static String valdateData(String text) {
+        String clearText;
+
+        clearText = text == null ? "" : text.replaceAll("<","&lt;")
+                .replaceAll(">","&gt;")
+                .replaceAll("\"","&quot;")
+                .replaceAll("'","&apos;");
+
+        return clearText;
     }
 }

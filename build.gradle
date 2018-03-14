@@ -29,7 +29,7 @@ dependencies {
     compile 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
     compile 'org.apache.taglibs:taglibs-standard-spec:1.2.5'
 
-    compile 'javax.servlet:servlet-api:3.0-alpha-1'
+//    compile 'javax.servlet:servlet-api:3.0-alpha-1'
     compile 'javax:javaee-api:7.0'
     compile 'javax:javaee-web-api:7.0'
 
