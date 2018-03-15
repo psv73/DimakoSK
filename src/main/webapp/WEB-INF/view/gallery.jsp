@@ -12,11 +12,11 @@
         <page:language/>
     </header>
     <div class="heading">
-        <h1><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%>
-        </h1>
+        <h1><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%></h1>
     </div>
     <div class="row">
-        <div class="col-xs-8" style="padding-top: 17px" id="main">
+        <div class="col-xs-8" id="main">
+            <p/>
             <div class="row">
                 <div class="col col-xs-6 col-md-4">
                     <a data-fancybox="carpark" title="Truck"

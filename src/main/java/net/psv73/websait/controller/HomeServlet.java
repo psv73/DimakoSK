@@ -10,9 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,21 +41,11 @@ public class HomeServlet extends HttpServlet {
 
         request.setAttribute("pageName", pageName);
 
-        if (request.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(request.getParameter("lang"))) {
-            response = Utils.setLanguageFromParam(response, request.getParameter("lang"));
-        } else {
-            Utils.setLanguageFromCookie(request.getCookies());
-        }
-
         if (!pageName.equals("/contacts")) {
             List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage().toUpperCase()));
             request.setAttribute("articles", articles);
         }
 
-/*        if (!webPath.equals(pageName)) {
-            response.sendRedirect(pageName);
-            return;
-        }*/
         request.getRequestDispatcher(applet).forward(request, response);
     }
 

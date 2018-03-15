@@ -2,6 +2,7 @@ package net.psv73.websait.controller;
 
 import net.psv73.websait.dao.ArticleDAO;
 import net.psv73.websait.model.Article;
+import net.psv73.websait.model.User;
 import net.psv73.websait.util.Utils;
 
 import javax.servlet.RequestDispatcher;
@@ -39,6 +40,8 @@ public class EditArticleServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Article article = Utils.getArticleFromReqest(req);
+        article.setUser((User) req.getSession().getAttribute("loginedUser"));
+
         String error = ArticleDAO.updateArticle(article);
 
         if (error != null) {

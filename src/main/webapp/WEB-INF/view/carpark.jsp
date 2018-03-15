@@ -14,8 +14,7 @@
         <page:language/>
     </header>
     <div class="heading">
-        <h1><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%>
-        </h1>
+        <h1><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%></h1>
     </div>
     <div class="row">
         <div class="col-xs-8" id="main">

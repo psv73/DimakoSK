@@ -3,6 +3,7 @@ package net.psv73.websait.controller;
 import net.psv73.websait.Languages;
 import net.psv73.websait.dao.ArticleDAO;
 import net.psv73.websait.model.Article;
+import net.psv73.websait.model.User;
 import net.psv73.websait.util.Utils;
 
 import javax.servlet.RequestDispatcher;
@@ -68,6 +69,7 @@ public class AddArticleServlet extends HttpServlet {
         }
 
         Article article = new Article(text, language, name, date);
+        article.setUser((User) req.getSession().getAttribute("loginedUser"));
 
         if (error == null) {
             error = ArticleDAO.addArticle(article);

@@ -8,8 +8,6 @@ apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.p
 gretty {
     httpPort = 8888
     contextPath = '/DimakoSK/'
-//    debugPort = 5005
-//    debugSuspend = true
 }
 
 task wrapper(type: Wrapper) {
@@ -29,7 +27,6 @@ dependencies {
     compile 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
     compile 'org.apache.taglibs:taglibs-standard-spec:1.2.5'
 
-//    compile 'javax.servlet:servlet-api:3.0-alpha-1'
     compile 'javax:javaee-api:7.0'
     compile 'javax:javaee-web-api:7.0'
 
@@ -43,11 +40,5 @@ dependencies {
     compile 'org.hibernate:hibernate-core:5.0.1.Final'
 
     //jdbc dependencies
-//    compile 'org.xerial:sqlite-jdbc:3.20.1'
     compile 'mysql:mysql-connector-java:5.1.45'
-//    compile 'mysql:mysql-connector-java:5.1.38'
-
-//    compile 'javax.json:javax.json-api:1.1'
-//    compile 'com.pushtorefresh.storio2:sqlite:2.0.0'
-//    compile 'org.json:json:20170516'
 }

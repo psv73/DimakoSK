@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "encodingFilter", urlPatterns = {"/mcon/*"})
+@WebFilter(filterName = "encodingFilter", urlPatterns = {"/*"})
 public class EncodingFilter implements Filter {
 
     public EncodingFilter() {
@@ -25,8 +25,14 @@ public class EncodingFilter implements Filter {
         request.setCharacterEncoding("UTF-8");
 
         HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse resp = (HttpServletResponse) response;
 
-        Utils.setLanguageFromCookie(req.getCookies());
+
+        if (req.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(req.getParameter("lang"))) {
+            response = Utils.setLanguageFromParam(resp, request.getParameter("lang"));
+        } else {
+            Utils.setLanguageFromCookie(req.getCookies());
+        }
 
         chain.doFilter(request, response);
     }

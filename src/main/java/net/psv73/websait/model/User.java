@@ -3,22 +3,26 @@ package net.psv73.websait.model;
 import net.psv73.websait.util.Utils;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "User",
+@Table(name = "user",
         indexes = {@Index(name = "name", columnList = "name"),
                     @Index(name = "password", columnList = "password")})
-public class User {
+public class User implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "user_id", unique = true, nullable = false)
+    private Long id;
 
+    @Column(length = 32)
     private String name;
 
+    @Column(length = 32)
     private String password;
 
     private UUID uuid;
@@ -29,17 +33,20 @@ public class User {
             joinColumns = { @JoinColumn(name = "user_id") },
             inverseJoinColumns = { @JoinColumn(name = "role_id") }
     )
-    Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Article> articles = new HashSet<>();
 
     public User() {
         this.setUUID(UUID.randomUUID());
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,7 +55,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = Utils.valdateData(name);
     }
 
     public String getPassword() {
@@ -67,6 +74,14 @@ public class User {
         this.uuid = uuid;
     }
 
+    public Set<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
+
     public Set<Role> getRoles() {
         return roles;
     }
@@ -74,4 +89,5 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
 }

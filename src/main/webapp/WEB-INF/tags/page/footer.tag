@@ -50,13 +50,21 @@
 </footer>
 
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(window).load (function () {
+        resizeNewsBlock();
+    });
+
+    $(window).resize (function () {
+        resizeNewsBlock();
+    })
+
+    function resizeNewsBlock() {
         var h = $("#main").outerHeight();
         if (h > 20) {
-            $(".newsLine").height(h - 25);
+            $(".newsLine").height(h - 20);
             $("#news").innerHeight(h - 60);
         }
-    })
+    }
 </script>
 
 <!-- Код тега ремаркетинга Google -->

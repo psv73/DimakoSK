@@ -9,15 +9,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name = "Article")
+@Table(name = "article")
 @Access(AccessType.PROPERTY)
 public class Article implements Serializable {
 
-    @Access(AccessType.FIELD)
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @Column
     @Temporal(TemporalType.TIMESTAMP)
@@ -29,11 +25,14 @@ public class Article implements Serializable {
     @Column(length = 3)
     private Languages language;
 
+    @Column(length = 100)
     private String name;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
+
+    private User user;
 
     {
         this.created = Calendar.getInstance().getTime();
@@ -58,6 +57,9 @@ public class Article implements Serializable {
         this.date = date;
     }
 
+    @Access(AccessType.FIELD)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -101,6 +103,16 @@ public class Article implements Serializable {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+    @JoinColumn(name = "user_id", nullable = false)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

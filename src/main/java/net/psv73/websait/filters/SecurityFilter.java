@@ -2,7 +2,6 @@ package net.psv73.websait.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,7 +24,6 @@ public class SecurityFilter implements Filter {
 
         if (!(servletPath).equals("/mcon/login")) {
             if (req.getSession().getAttribute("loginedUser") == null) {
-//                req.getRequestDispatcher("/WEB-INF/view/mcon/login.jsp").forward(request, response);
                 resp.sendRedirect(req.getContextPath() + "/mcon/login");
                 return;
             }

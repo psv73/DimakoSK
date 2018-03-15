@@ -1,4 +1,5 @@
 <%@ tag import="net.psv73.websait.util.Utils" %>
+<%@ tag import="java.net.URLEncoder" %>
 <%@ tag pageEncoding="UTF-8" %>
 <div class="header">
     <div class="logo_and_image">
@@ -44,53 +45,32 @@
         <div class="collapse navbar-collapse" id="navbar-main">
             <ul class="nav navbar-nav">
                 <li${pageName.equals("/about")?" class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%>
+                    <a href="${pageContext.request.contextPath}/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%>
                     </a>
                 </li>
                 <li${pageName.equals("/carpark")?" class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%>
+                    <a href="${pageContext.request.contextPath}/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%>
                     </a>
                 </li>
                 <li${pageName.equals("/vacancies")?" class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%>
+                    <a href="${pageContext.request.contextPath}/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%>
                     </a>
                 </li>
                 <li${pageName.equals("/gallery")?" class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%>
+                    <a href="${pageContext.request.contextPath}/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%>
                     </a>
                 </li>
                 <li${pageName.equals("/documents")?" class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%>
+                    <a href="${pageContext.request.contextPath}/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%>
                     </a>
                 </li>
                 <li${pageName.equals("/contacts") ? " class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%>
+                    <a href="${pageContext.request.contextPath}/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%>
                     </a>
                 </li>
                 <li${pageName.equals("/faq") ? " class='active'" : ""}>
-                    <a href="<%= request.getContextPath() %>/faq">F.A.Q.
-                    </a>
+                    <a href="${pageContext.request.contextPath}/faq">F.A.Q.</a>
                 </li>
-                <%--
-                                <li<%= request.getAttribute("pageName").equals("/about")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/about"><%= Utils.getRecourceBundleValue("key.header.menu.about")%></a>
-                                </li>
-                                <li<%=request.getAttribute("pageName").equals("/carpark")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/carpark"><%= Utils.getRecourceBundleValue("key.header.menu.carpark")%></a>
-                                </li>
-                                <li<%=request.getAttribute("pageName").equals("/vacancies")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/vacancies"><%= Utils.getRecourceBundleValue("key.header.menu.vacancies")%></a>
-                                </li>
-                                <li<%=request.getAttribute("pageName").equals("/gallery")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/gallery"><%= Utils.getRecourceBundleValue("key.header.menu.gallery")%></a>
-                                </li>
-                                <li<%=request.getAttribute("pageName").equals("/documents")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/documents"><%= Utils.getRecourceBundleValue("key.header.menu.documents")%></a>
-                                </li>
-                                <li<%=request.getAttribute("pageName").equals("/contacts")?" class='active'":""%>>
-                                    <a href="<%= request.getContextPath() %>/contacts"><%= Utils.getRecourceBundleValue("key.header.menu.contacts")%></a>
-                                </li>
-                --%>
             </ul>
         </div>
     </div>
