@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtils {
 
-    public static final SessionFactory sessionFactory ;
+    private static final SessionFactory sessionFactory ;
 
     static {
         try {

@@ -5,7 +5,6 @@ import net.psv73.websait.util.HibernateUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
@@ -45,9 +44,7 @@ public class UserDAO {
         return user;
     }
 
-    public static boolean addUser(User user) {
-
-        boolean rez = true;
+    private static void addUser(User user) {
 
         Session session = HibernateUtils.getSession();
         Transaction tx = session.beginTransaction();
@@ -60,8 +57,6 @@ public class UserDAO {
         } finally {
             session.close();
         }
-
-        return rez;
     }
 
     public static void CheckUsers() {
@@ -82,9 +77,7 @@ public class UserDAO {
             session.close();
         }
 
-        /**
-         * if User table is clear add new user
-         */
+        // if User table is clear add new user
         if (rows == null || rows == 0) {
             ImitateData();
         }

@@ -31,6 +31,7 @@ public class EditArticleServlet extends HttpServlet{
             }
         }
 
+        req.setAttribute("error", error);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/mcon/editArticle.jsp");
 
         dispatcher.forward(req, resp);

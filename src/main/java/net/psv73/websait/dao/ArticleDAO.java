@@ -8,24 +8,22 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.servlet.http.HttpSession;
-import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
 public class ArticleDAO {
 
-    public static List<Article> getAllArticles(Languages language) {
+    public static List getAllArticles(Languages language) {
         String error = null;
-        List<Article> articles = null;
+        List articles = null;
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
 
             org.hibernate.Query query = session.createQuery("from Article where language = :language" +
-                " order by date desc");
+                    " order by date desc");
 
             query.setParameter("language", language);
 
@@ -35,26 +33,23 @@ public class ArticleDAO {
         } catch (HibernateException he) {
             if (tx != null) tx.rollback();
             error = he.getMessage();
-            he.printStackTrace();
-        } finally {
-            session.close();
+//            throw he;
         }
 
         return articles;
     }
 
-    public static List<Article> getArticles(HttpSession httpSession) {
+    public static List getArticles(HttpSession httpSession) {
         String error = null;
-        List<Article> articles = null;
+        List articles = null;
 
         Date dateStart = (Date) httpSession.getAttribute("dateStart");
         Date dateEnd = (Date) httpSession.getAttribute("dateEnd");
         Languages language = (Languages) httpSession.getAttribute("lang");
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
 
             org.hibernate.Query query = session.createQuery("from Article where language = :language and " +
@@ -71,9 +66,9 @@ public class ArticleDAO {
             if (tx != null) tx.rollback();
             error = he.getMessage();
             he.printStackTrace();
-        } finally {
-            session.close();
         }
+
+        httpSession.setAttribute("error", error);
         return articles;
     }
 
@@ -89,10 +84,9 @@ public class ArticleDAO {
             e.printStackTrace();
         }
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
 
             article = session.get(Article.class, id);
@@ -102,8 +96,6 @@ public class ArticleDAO {
             if (tx != null) tx.rollback();
             error = he.getMessage();
             he.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return article;
@@ -112,10 +104,9 @@ public class ArticleDAO {
     public static String addArticle(Article article) {
         String error = null;
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
 
             session.save(article);
@@ -125,8 +116,6 @@ public class ArticleDAO {
             if (tx != null) tx.rollback();
             error = he.getMessage();
             he.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return error;
@@ -141,10 +130,9 @@ public class ArticleDAO {
             return error;
         }
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
             session.delete(art);
             tx.commit();
@@ -152,8 +140,6 @@ public class ArticleDAO {
             if (tx != null) tx.rollback();
             error = he.getMessage();
             he.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return error;
@@ -162,10 +148,9 @@ public class ArticleDAO {
     public static String updateArticle(Article article) {
         String error = null;
 
-        Session session = HibernateUtils.getSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = HibernateUtils.getSession()) {
             tx = session.beginTransaction();
             session.update(article);
             tx.commit();
@@ -173,8 +158,6 @@ public class ArticleDAO {
             if (tx != null) tx.rollback();
             error = he.getMessage();
             he.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return error;

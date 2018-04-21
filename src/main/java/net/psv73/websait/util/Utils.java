@@ -11,6 +11,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static net.psv73.websait.Languages.*;
+
 public class Utils {
 
     /**
@@ -27,7 +29,7 @@ public class Utils {
      * @return
      */
 
-    public static HttpServletResponse setLanguageFromParam(HttpServletResponse response, String language) {
+    public static void setLanguageFromParam(HttpServletResponse response, String language) {
         /**
          * Check that language is correct
          * must be equal one of elements of enum Languages
@@ -38,8 +40,6 @@ public class Utils {
 
         Cookie cookie = new Cookie("lang", currentLanguage);
         response.addCookie(cookie);
-
-        return response;
     }
 
     public static void setLanguageFromCookie(Cookie[] cookies) {
@@ -59,7 +59,7 @@ public class Utils {
 
     public static void setCurrentLanguage(String currentLanguage) {
 
-        for (Languages l : Languages.values()) {
+        for (Languages l : values()) {
             if (l.name().equals(currentLanguage.toUpperCase())) {
                 Utils.currentLanguage = currentLanguage.toLowerCase();
             }
@@ -122,7 +122,7 @@ public class Utils {
         Languages language = null;
 
         try {
-            language = Languages.valueOf(lang);
+            language = valueOf(lang);
         } catch (Exception e) {
             error = "Choose language";
         }

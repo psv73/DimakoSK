@@ -42,7 +42,7 @@
                 <a href="whatsapp://send?phone=‎+380972441511" class="social-icon-grey whatsapp brightness" title="WhatsApp +380972441511"></a>
             </div>
             <div class="col-xs-8 col-md-3 footer-logo" align="right">&copy; 2017
-                <script>new Date().getFullYear() > 2017 && document.write("-" + new Date().getFullYear());</script>
+                <script>new Date().getFullYear() > 2017 && document.write("- " + new Date().getFullYear());</script>
                 PSV73
             </div>
         </div>

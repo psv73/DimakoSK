@@ -70,7 +70,7 @@ public class User implements Serializable{
         return uuid;
     }
 
-    public void setUUID(UUID uuid) {
+    private void setUUID(UUID uuid) {
         this.uuid = uuid;
     }
 

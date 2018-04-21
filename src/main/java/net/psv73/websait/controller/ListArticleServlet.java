@@ -2,7 +2,6 @@ package net.psv73.websait.controller;
 
 import net.psv73.websait.Languages;
 import net.psv73.websait.dao.ArticleDAO;
-import net.psv73.websait.model.Article;
 import net.psv73.websait.util.Utils;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -51,7 +49,7 @@ public class ListArticleServlet extends HttpServlet {
         }
 
         if (requeredData) {
-            List<Article> articles = ArticleDAO.getArticles(req.getSession());
+            List articles = ArticleDAO.getArticles(req.getSession());
             req.getSession().setAttribute("articles", articles);
         }
 
@@ -104,7 +102,7 @@ public class ListArticleServlet extends HttpServlet {
         req.getSession().setAttribute("dateEnd", dateEnd);
         req.getSession().setAttribute("lang", language);
 
-        List<Article> articles = ArticleDAO.getArticles(req.getSession());
+        List articles = ArticleDAO.getArticles(req.getSession());
         req.getSession().setAttribute("articles", articles);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/mcon/articlesList.jsp");

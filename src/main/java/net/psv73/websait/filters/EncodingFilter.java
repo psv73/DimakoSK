@@ -16,7 +16,7 @@ public class EncodingFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
 
     }
 
@@ -29,7 +29,7 @@ public class EncodingFilter implements Filter {
 
 
         if (req.getParameter("lang") != null && !Utils.getCurrentLanguage().equals(req.getParameter("lang"))) {
-            response = Utils.setLanguageFromParam(resp, request.getParameter("lang"));
+            Utils.setLanguageFromParam(resp, request.getParameter("lang"));
         } else {
             Utils.setLanguageFromCookie(req.getCookies());
         }

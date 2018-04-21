@@ -2,7 +2,6 @@ package net.psv73.websait.controller;
 
 import net.psv73.websait.Languages;
 import net.psv73.websait.dao.ArticleDAO;
-import net.psv73.websait.model.Article;
 import net.psv73.websait.util.Utils;
 
 import javax.servlet.ServletConfig;
@@ -18,7 +17,7 @@ import java.util.List;
  */
 public class HomeServlet extends HttpServlet {
 
-    public String defaultPage = "";
+    private String defaultPage = "";
 
     public HomeServlet() {
         super();
@@ -41,8 +40,9 @@ public class HomeServlet extends HttpServlet {
 
         request.setAttribute("pageName", pageName);
 
-        if (!pageName.equals("/contacts")) {
-            List<Article> articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage().toUpperCase()));
+        if (!pageName.equals("/contacts") &&
+                !pageName.equals("/documents")) {
+            List articles = ArticleDAO.getAllArticles(Languages.valueOf(Utils.getCurrentLanguage().toUpperCase()));
             request.setAttribute("articles", articles);
         }
 
