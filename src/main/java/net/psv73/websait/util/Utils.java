@@ -116,7 +116,7 @@ public class Utils {
         String name = "";
         String dateStr = request.getParameter("date");
         String text = request.getParameter("text");
-        String lang = request.getParameter("lang");
+        String lang = request.getParameter("articleLang");
         String idStr = request.getParameter("id");
         Long id = null;
         Languages language = null;

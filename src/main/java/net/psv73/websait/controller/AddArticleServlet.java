@@ -51,7 +51,7 @@ public class AddArticleServlet extends HttpServlet {
         String name ="";
         String dateStr = req.getParameter("date");
         String text = req.getParameter("text");
-        String lang = req.getParameter("lang");
+        String lang = req.getParameter("articleLang");
         Languages language = null;
 
         try {

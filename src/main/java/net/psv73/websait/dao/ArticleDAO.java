@@ -45,7 +45,7 @@ public class ArticleDAO {
 
         Date dateStart = (Date) httpSession.getAttribute("dateStart");
         Date dateEnd = (Date) httpSession.getAttribute("dateEnd");
-        Languages language = (Languages) httpSession.getAttribute("lang");
+        Languages language = (Languages) httpSession.getAttribute("articleLang");
 
         Transaction tx = null;
 

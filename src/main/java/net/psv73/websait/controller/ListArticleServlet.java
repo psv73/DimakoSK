@@ -42,9 +42,9 @@ public class ListArticleServlet extends HttpServlet {
             requeredData = false;
         }
 
-        if (req.getSession().getAttribute("lang") == null) {
-            Languages lang  = Languages.SK;
-            req.getSession().setAttribute("lang", lang);
+        if (req.getSession().getAttribute("articleLang") == null) {
+            Languages articleLang  = Languages.SK;
+            req.getSession().setAttribute("articleLang", articleLang);
             requeredData = false;
         }
 
@@ -65,7 +65,7 @@ public class ListArticleServlet extends HttpServlet {
 
         String dateStartStr = req.getParameter("dateStart");
         String dateEndStr = req.getParameter("dateEnd");
-        String lang = req.getParameter("lang");
+        String articleLang = req.getParameter("articleLang");
 
         Date dateStart = Utils.getDefaultDateStart();
         Date dateEnd = new Date();
@@ -90,7 +90,7 @@ public class ListArticleServlet extends HttpServlet {
         }
 
         try {
-            language = Languages.valueOf(lang);
+            language = Languages.valueOf(articleLang);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,7 +100,7 @@ public class ListArticleServlet extends HttpServlet {
 //        req.getSession().setAttribute("dateEnd", sdf.format(dateEnd));
         req.getSession().setAttribute("dateStart", dateStart);
         req.getSession().setAttribute("dateEnd", dateEnd);
-        req.getSession().setAttribute("lang", language);
+        req.getSession().setAttribute("articleLang", language);
 
         List articles = ArticleDAO.getArticles(req.getSession());
         req.getSession().setAttribute("articles", articles);

@@ -38,12 +38,12 @@
                 <input type="date" style="height: 2em" name="dateEnd" value="<frt:formatDate pattern = "<%= Utils.DATEFORMAT%>"
                          value = "${dateEnd}" />">
                 <span>Language</span>
-                    <select name="lang">
-                        <c:forEach items="<%=Languages.values()%>" var="item">
-                            <option value="${item}" ${item == lang ? 'selected' : ''}>${item}</option>
-                        </c:forEach>
-                    </select>
-                    <input type="submit" value="Show">
+                <select name="articleLang">
+                    <c:forEach items="<%=Languages.values()%>" var="item">
+                        <option value="${item}" ${item == articleLang ? 'selected' : ''}>${item}</option>
+                    </c:forEach>
+                </select>
+                <input type="submit" value="Show">
             </form>
         </div>
     </div>

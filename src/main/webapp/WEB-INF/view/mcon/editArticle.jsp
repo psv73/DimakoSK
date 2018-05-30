@@ -45,7 +45,7 @@
                     <tr>
                         <td>Language</td>
                         <td>
-                            <select name="lang">
+                            <select name="articleLang">
                                 <c:forEach items="<%=Languages.values()%>" var="item">
                                     <option value="${item}" ${item == article.language ? 'selected' : ''}>${item}</option>
                                 </c:forEach>
