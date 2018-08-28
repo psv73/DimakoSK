@@ -38,14 +38,10 @@
                         <p>Tuhovská, 1/A<br>
                             Bratislava 831 06<br>
                             Slovensko<br>
-                            <img src="<%= request.getContextPath() %>/resources/img/flag/Ukraine_16.png"> ‎+380972441511
-                            <br>
-                            <img src="<%= request.getContextPath() %>/resources/img/flag/Kazakhstan_16.png">
-                            ‎+‎‎77273505866
-                            <br>
-                            <img src="<%= request.getContextPath() %>/resources/img/flag/Slovakia_16.png">
-                            ‎+‎‎421233046905
-                            <br>
+                            <img src="<%= request.getContextPath() %>/resources/img/flag/Ukraine_16.png"> ‎+380972441511<br>
+                            <img src="<%= request.getContextPath() %>/resources/img/flag/Russia_16.png"> ‎+74994906960<br>
+                            <img src="<%= request.getContextPath() %>/resources/img/flag/Kazakhstan_16.png">‎ +‎‎77273505866<br>
+                            <img src="<%= request.getContextPath() %>/resources/img/flag/Slovakia_16.png">‎ +‎‎421233046905<br>
                             <%--<a href="viber://chat?number=‎380972441511" class="social-icon viber brightness" title="Viber +380972441511"></a>--%>
                             <a href="viber://forward?text=<Your Text>" class="social-icon viber brightness"
                                title="Viber +380972441511"></a>
