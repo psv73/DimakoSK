@@ -102,7 +102,7 @@ public class Utils {
     public static Date getDefaultDateStart() {
         Calendar cal = Calendar.getInstance();
         Date today = cal.getTime();
-        cal.add(Calendar.MONTH, -1); // to get previous year add -1
+        cal.add(Calendar.YEAR, -10); // to get previous year add -1
         Date date = cal.getTime();
         return date;
     }
