@@ -7,7 +7,7 @@
     <page:header/>
 </head>
 <body>
-<div class="wrapper container">
+<div class="wrapper container" style="padding: 0 0 0 0;">
     <header>
         <page:language/>
     </header>
@@ -19,6 +19,14 @@
             <img src="<%= request.getContextPath() %>/resources/img/happydriver.jpg" alt="truck" class="office img-responsive pull-right img-thumbnail">
             <%= Utils.getRecourceBundleValue("key.vacancies")%>
         </div>
+    </div>
+    <div class="row" align="center" >
+        <p>
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Ukraine_16.png"> ‎+380972441511
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Russia_16.png"> ‎+74994906960
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Kazakhstan_16.png">‎ +‎‎77273505866
+            <img src="<%= request.getContextPath() %>/resources/img/flag/Slovakia_16.png">‎ +‎‎421233046905
+        </p>
     </div>
 </div>
 <page:footer/>
