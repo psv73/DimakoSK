@@ -64,52 +64,52 @@
                              class="img-responsive img-thumbnail brightness" alt="">
                     </a>
                 </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/20190703_162953.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/20190703_162953_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0004.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0004_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0008.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0008_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0011.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0011_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0016.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0016_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0017.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0017_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4">
+                    <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0028.jpg" data-caption="Our new cars">
+                        <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0028_preview.jpg"
+                             class="img-responsive img-thumbnail brightness" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="col-xs-4" align="left">
-                <page:news/>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/20190703_162953.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/20190703_162953_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0004.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0004_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0008.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0008_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0011.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0011_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0016.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0016_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0017.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0017_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
-        </div>
-        <div class="col col-xs-6 col-md-4 col-lg-3">
-            <a data-fancybox="carpark" href="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0028.jpg" data-caption="Our new cars">
-                <img src="<%= request.getContextPath() %>/resources/img/carpark/IMG-20190726-WA0028_preview.jpg"
-                     class="img-responsive img-thumbnail brightness" alt="">
-            </a>
+            <page:news/>
         </div>
     </div>
 </div>
